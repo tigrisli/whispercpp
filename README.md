@@ -39,6 +39,7 @@ Afterwards, install the wheel:
 pip install dist/*.whl
 ```
 
+## [cont. if needed]
 The binding provides a `Whisper` class:
 
 ```python
