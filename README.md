@@ -8,12 +8,19 @@ _Pybind11 bindings for
 Install from source:
 
 ```bash
-pip install git+https://github.com/AIWintermuteAI/whispercpp.git -vv
+pip install git+https://github.com/tigrisli/whispercpp.git -vv
 ```
-Alternatively, git clone the develop branch of repository and initialize all submodules:
+
+Activate venv:
 
 ```bash
-git submodule update --init --recursive
+source venv/bin/activate
+```
+
+Install Build:
+
+```bash
+pip install build
 ```
 
 Then build the wheel:
@@ -23,21 +30,13 @@ Then build the wheel:
 > `sudo apt-get install libasound2-dev python3-dev python3-pip`
 
 ```bash
-# Option 1: using pypa/build
 python3 -m build -w
-
-# Option 2: using bazel
-./tools/bazel build //:whispercpp_wheel
 ```
 
 Afterwards, install the wheel:
 
 ```bash
-# Option 1: via pypa/build
 pip install dist/*.whl
-
-# Option 2: using bazel
-pip install $(./tools/bazel info bazel-bin)/*.whl
 ```
 
 The binding provides a `Whisper` class:
